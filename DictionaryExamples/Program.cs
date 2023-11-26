@@ -147,3 +147,26 @@ else
 {
     Console.WriteLine("Something is wrong");
 }
+
+
+//Example 2 for Dictionaries
+
+double discount = Convert.ToInt32(Console.ReadLine());
+
+Dictionary<string, double> coffee = new Dictionary<string, double>();
+coffee.Add("Americano", 50);
+coffee.Add("Latte", 70);
+coffee.Add("Flat White", 60);
+coffee.Add("Espresso", 60);
+coffee.Add("Cappuccino", 80);
+coffee.Add("Mocha", 90);
+
+var keys = coffee.Keys.ToArray(); //Create another variation of the dictionary as an array in order to alter the array while you loop through it in the foreach loop instead of trying to loop and iterate through the dictionary alone in the foreach loop
+//your code goes here
+foreach (string k in keys)
+{
+    double discountedPrice = coffee[k] - (coffee[k] * discount / 100);
+    coffee[k] = discountedPrice;
+    coffee.Keys.ToArray();
+    Console.WriteLine(k + ": " + coffee[k]);
+}
